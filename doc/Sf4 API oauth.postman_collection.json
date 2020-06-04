@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "345518d7-c70e-4024-88e2-c6948c65da13",
+		"name": "Sf4 API oauth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createClient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"redirect-uri\": \"devenv.tld\",\n\t\"grant-type\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://devenv.tld/createClient",
+					"protocol": "http",
+					"host": [
+						"devenv",
+						"tld"
+					],
+					"path": [
+						"createClient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "oauth/v2/token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"client_id\": \"2_3uijaiwkukqos4ggss0ows8ck8k48w4cs4ks4w4kkcws0scckc\",\n    \"client_secret\": \"1wrdoty0votccgs0k0o0occo4ksokkso00w4ww8os4wk040os4\",\n    \"grant_type\": \"password\",\n    \"username\": \"test_user\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://devenv.tld/oauth/v2/token",
+					"protocol": "http",
+					"host": [
+						"devenv",
+						"tld"
+					],
+					"path": [
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/movies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": " Bearer NTY5NTJiNDYxMzViYTE1ZmFmNmEyZDE5MTcyY2IwZmU1MGM5ZGQxYTM4MGM0YWU5M2YzMWY3ZDBkYmY4OTE5Mg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://devenv.tld/api/movies",
+					"protocol": "http",
+					"host": [
+						"devenv",
+						"tld"
+					],
+					"path": [
+						"api",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
